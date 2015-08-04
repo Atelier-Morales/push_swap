@@ -1,29 +1,37 @@
-MKEX = cc -g -o
-DIRSRC = srcs/
-SRC = main.c
-FLAGS = -Wall -Wextra -Werror
-OBJECT = $(SRC:.c=.o)
-COMP = cc -c
+
+SRC = 	main.c \
+		add_node.c \
+		print_list.c \
+		create_pile.c \
+		is_int.c \
+		check_double.c
+DIR = srcs/
+LIB = libft/
+HEADER = includes/
+FLAGS = -Wall -Wextra -Werror -g
+OBJ = $(SRC:.c=.o)
 NAME = push_swap
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME) : $(OBJECT)
-		@$(MKEX) $(NAME) $(DIRSRC)$(OBJECT) -L libft/ -lft
-		@echo "push_swap is ready. Enjoy!"
+$(NAME): $(OBJ)
+	@make -s -C $(LIB)
+	@gcc $(FLAGS) -o $(NAME) $^ -L$(LIB) -lft
+	@echo "push_swap is ready. Enjoy!"
 
-$(OBJECT) :
-		@make -C libft/
-		@$(COMP) $(DIRSRC)$(SRC) $(FLAGS) -I./ -I libft/
-		@echo "Compilation of C files succesful"
+%.o: $(DIR)%.c
+	@gcc $(FLAGS)  -o $@ -c $< -I$(LIB)$(HEADER) -I$(HEADER)
 
-clean :
-		@/bin/rm -f $(DIRSRC)$(OBJECT)
-		@echo "Object deleted"
+clean:
+	@rm -f $(OBJ)
+	@make clean -s -C $(LIB)
+	@echo "Objects deleted"
 
+fclean: clean
+	@rm -f $(NAME)
+	@make fclean -s -C $(LIB)
+	@echo "Folder cleanup successful"
 
-fclean : clean
-		@/bin/rm -f $(NAME)
-		@echo "Folder cleanup successful"
+re: fclean all
 
-re : fclean all
+.PHONY: all clean fclean re
