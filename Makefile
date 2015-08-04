@@ -4,7 +4,8 @@ SRC = 	main.c \
 		print_list.c \
 		create_pile.c \
 		is_int.c \
-		check_double.c
+		check_double.c \
+		check_int_format.c
 DIR = srcs/
 LIB = libft/
 HEADER = includes/

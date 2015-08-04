@@ -2,7 +2,7 @@
 
 int     main(int ac, char **av) 
 {
-    t_pile	*pileA;
+    t_list	*pileA;
     int		len;
 
     pileA = NULL;
