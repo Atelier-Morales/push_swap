@@ -1,5 +1,4 @@
 #include "push_swap.h"
-#include <stdio.h>
 
 static int	test_sign(const char *str, int i)
 {

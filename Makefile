@@ -1,11 +1,12 @@
 
-SRC = 	main.c \
-		add_node.c \
-		print_list.c \
-		create_pile.c \
-		is_int.c \
-		check_double.c \
-		check_int_format.c
+SRC = 	main.c 				\
+		add_node.c 			\
+		print_list.c 		\
+		create_pile.c 		\
+		is_int.c 			\
+		check_double.c 		\
+		check_int_format.c 	\
+		initialize_list.c
 DIR = srcs/
 LIB = libft/
 HEADER = includes/

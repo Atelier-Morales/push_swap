@@ -1,5 +1,4 @@
 #include "push_swap.h"
-#include <stdio.h>
 
 static int	check_list(int *table, int check, int len)
 {

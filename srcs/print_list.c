@@ -1,14 +1,4 @@
-#include <stdio.h>
 #include "push_swap.h"
-/*
-void	print_list(t_pile *pile)
-{
-	while (pile)
-	{
-		printf("%d\n", pile->nb);
-		pile = pile->next;
-	}
-}*/
 
 void		print_list(t_list *list)
 {
@@ -20,9 +10,10 @@ void		print_list(t_list *list)
 		while (tmp != NULL)
 		{
 			ft_putnbr(tmp->nb);
-			ft_putstr(" > ");
+			if (tmp->next != NULL)
+				ft_putstr(" > ");
 			tmp = tmp->next;
 		}
 	}
-	ft_putstr("NULL\n");
+	ft_putstr("\n");
 }

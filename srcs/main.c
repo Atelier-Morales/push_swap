@@ -3,9 +3,10 @@
 int     main(int ac, char **av) 
 {
     t_list	*pileA;
+    t_list  *pileB;
     int		len;
 
-    pileA = NULL;
+    pileA = pileB = NULL;
     len = ac -1;
     if (ac < 2)
     {
@@ -13,6 +14,7 @@ int     main(int ac, char **av)
     	return (0);
     }
     pileA = create_pile(len, av + 1);
+    initialize_list(&pileB, len);
     if (pileA)
     	print_list(pileA);
     return (0);

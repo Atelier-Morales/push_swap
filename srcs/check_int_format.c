@@ -1,5 +1,4 @@
 #include "push_swap.h"
-#include <stdio.h>
 
 int			check_int_format(t_pile *pile)
 {

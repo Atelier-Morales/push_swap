@@ -1,17 +1,5 @@
 #include "push_swap.h"
-#include <stdio.h>
 #include <stdlib.h>
-
-static void    initialize_list(t_list **list, int len)
-{
-    *list = (t_list *)malloc(sizeof(t_list));
-    if (*list != NULL)
-    {
-        (*list)->len = len;
-        (*list)->first = NULL;
-        (*list)->last = NULL;
-    }
-}
 
 t_list  *create_pile(int len, char **av)
 {

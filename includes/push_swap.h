@@ -23,5 +23,6 @@ t_list  	*create_pile(int len, char **av);
 int			is_int(char *str);
 int			check_double(t_pile *pile, int len);
 int			check_int_format(t_pile *pile);
+void    	initialize_list(t_list **list, int len);
 
 #endif
