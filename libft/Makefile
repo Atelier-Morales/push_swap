@@ -31,6 +31,7 @@ SRC = ft_atoi.c \
 	  ft_itoa.c 	\
 	  ft_atoi.c     \
 	  ft_putnbr.c   \
+	  ft_isdigit.c 	\
 	  ft_memalloc.c
 
 OBJ = $(SRC:.c=.o)

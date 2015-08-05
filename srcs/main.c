@@ -14,8 +14,11 @@ int     main(int ac, char **av)
     	return (0);
     }
     pileA = create_pile(len, av + 1);
-    initialize_list(&pileB, len);
+    initialize_list(&pileB);
     if (pileA)
+    {
+        push_swap(pileA, pileB);
     	print_list(pileA);
+    }
     return (0);
 }

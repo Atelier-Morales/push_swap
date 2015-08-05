@@ -2,17 +2,14 @@
 
 void		print_list(t_list *list)
 {
-	t_pile	*tmp;
-
 	if (list != NULL)
 	{
-		tmp = list->first;
-		while (tmp != NULL)
+		while (list->first)
 		{
-			ft_putnbr(tmp->nb);
-			if (tmp->next != NULL)
-				ft_putstr(" > ");
-			tmp = tmp->next;
+			ft_putnbr(list->first->nb);
+			if (list->first->next != NULL)
+				ft_putstr(" -> ");
+			list->first = list->first->next;
 		}
 	}
 	ft_putstr("\n");

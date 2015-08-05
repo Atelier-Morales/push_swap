@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,42 +12,11 @@
 
 #include "libft.h"
 
-static const char	*ft_remove(const char *str)
+int		ft_isdigit(int c)
 {
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
-			|| *str == '\f' || *str == '\r')
-		str++;
-	return (str);
-}
-
-static void			ft_assign(int *i, int *res, int *sign)
-{
-	*i = 0;
-	*res = 0;
-	*sign = 1;
-}
-
-int					ft_atoi(const char *str)
-{
-	int		res;
-	int		sign;
-	int		i;
-
-	ft_assign(&i, &res, &sign);
-	if (str == NULL)
-		return (0);
-	str = ft_remove(str);
-	if (str[i] == '-' || str[i] == '+')
+	if (c >= '0' && c <= '9')
 	{
-		sign = (str[i] == '-') ? -1 : 1;
-		i++;
+		return (1);
 	}
-	while (str[i] != '\0')
-	{
-		if (ft_isdigit(str[i]) == 0)
-			return (res * sign);
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return (sign * res);
+	return (0);
 }

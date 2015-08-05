@@ -22,7 +22,15 @@ void		print_list(t_list *list);
 t_list  	*create_pile(int len, char **av);
 int			is_int(char *str);
 int			check_double(t_pile *pile, int len);
-int			check_int_format(t_pile *pile);
-void    	initialize_list(t_list **list, int len);
+int			check_int_format(char *str);
+void    	initialize_list(t_list **list);
+void		push_swap(t_list *a, t_list *b);
+int			check_sorted_list(t_list *list, t_pile *test);
+void		rotate_list(t_list *list);
+t_list		*list_append(t_list *list, int value);
+t_list		*append_to_list(t_list *l, int nb);
+t_list		*list_del(t_list *list, t_pile *node);
+void		rotate(t_list *list);
+void		sa(t_list *list);
 
 #endif

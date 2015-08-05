@@ -1,12 +1,8 @@
 #include "push_swap.h"
 
-int			check_int_format(t_pile *pile)
+int 	check_int_format(char *str)
 {
-	while (pile)
-	{
-		if (pile->nb > 2147483647 || pile->nb <= -2147483648)
-			return (0);
-		pile = pile->next;
-	}
+	if (ft_strlen(str) != ft_strlen(ft_itoa(ft_atoi(str))))
+		return (0);
 	return (1);
 }

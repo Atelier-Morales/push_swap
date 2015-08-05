@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include <stdio.h>
 
 static int	test_sign(const char *str, int i)
 {
@@ -27,5 +28,7 @@ int			is_int(char *str)
 			return (0);
 		++i;
 	}
+	if (check_int_format(str) == 0)
+		return (0);
 	return (1);
 }

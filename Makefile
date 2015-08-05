@@ -6,7 +6,12 @@ SRC = 	main.c 				\
 		is_int.c 			\
 		check_double.c 		\
 		check_int_format.c 	\
-		initialize_list.c
+		initialize_list.c   \
+		push_swap.c 		\
+		check_sorted_list.c \
+		rotate_list.c    	\
+		delete_node.c 		\
+		swap_list.c
 DIR = srcs/
 LIB = libft/
 HEADER = includes/

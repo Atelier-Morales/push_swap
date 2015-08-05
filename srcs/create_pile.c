@@ -4,16 +4,14 @@
 t_list  *create_pile(int len, char **av)
 {
     t_list *buf;
-	t_pile *pile;
 	int    i;
 
-    pile = NULL;
-	initialize_list(&buf, len);
+	initialize_list(&buf);
 	i = 0;
 	while (i < len)
     {
     	if (is_int(av[i]) == 1)
-            addnode(&buf, &pile, ft_atoi(av[i]));
+            buf = append_to_list(buf, ft_atoi(av[i]));
     	else
     	{
     		ft_putstr("Error!\n");
@@ -21,7 +19,10 @@ t_list  *create_pile(int len, char **av)
     	}
     	++i;
     }
-    if (check_double(pile, len) == 0 || check_int_format(pile) == 0)
+    if (check_double(buf->first, len) == 0) 
+    {
+        ft_putstr("Error!\n");
         return (NULL);
+    }
     return (buf);
 }
