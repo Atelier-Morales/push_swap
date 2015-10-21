@@ -1,36 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   add_node.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/10/21 11:08:28 by fmorales          #+#    #+#             */
+/*   Updated: 2015/10/21 11:19:23 by fmorales         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "push_swap.h"
 
-
-void        addnode(t_list **l, t_pile **s, int nb)
+void	addnode(t_list **l, t_pile **s, int nb)
 {
-    if (*s == NULL)
-    {
-        *s = (t_pile *)malloc(sizeof(t_pile));
-        if (*s)
-        {
-            (*s)->nb = nb;
-            (*s)->next = NULL;
-            if ((*l)->last == NULL)
-            {
-                (*s)->prev = NULL;
-                (*l)->first = (*s);
-                (*l)->last = (*s);
-            }
-            else
-            {
-            	printf("list->last->nb: %d\n", (*l)->last->nb);
-                (*s)->prev = (*l)->last;
-                printf("s->prev->nb: %d\n", (*s)->prev->nb);
-                (*l)->last->next = (*s);
-                (*l)->last = (*s);
-            }
-            (*l)->len--;
-        }
-    }
-    else
-        addnode(&(*l), &((*s)->next), nb);
+	if (*s == NULL)
+	{
+		*s = (t_pile *)malloc(sizeof(t_pile));
+		if (*s)
+		{
+			(*s)->nb = nb;
+			(*s)->next = NULL;
+			if ((*l)->last == NULL)
+			{
+				(*s)->prev = NULL;
+				(*l)->first = (*s);
+				(*l)->last = (*s);
+			}
+			else
+			{
+				(*s)->prev = (*l)->last;
+				(*l)->last->next = (*s);
+				(*l)->last = (*s);
+			}
+			(*l)->len--;
+		}
+	}
+	else
+		addnode(&(*l), &((*s)->next), nb);
 }
 
 t_list	*append_to_list(t_list *list, int nb)

@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/13 14:05:56 by fmorales          #+#    #+#             */
-/*   Updated: 2013/12/22 15:54:45 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/21 11:20:27 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char			**ft_strsplit(char const *s, char c)
 			}
 			i++;
 		}
-		tab[j] = '\0';
+		tab[j] = NULL;
 	}
 	return (tab);
 }
