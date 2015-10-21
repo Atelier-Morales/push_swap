@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:11:07 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/21 12:00:51 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/21 14:34:27 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list	*create_pile(int len, char **av)
 	while (i < len)
 	{
 		if (is_int(av[i]) == 1)
-			buf = append_to_list(buf, ft_atoi(av[i]));
+			buf = add_node(buf, ft_atoi(av[i]));
 		else
 		{
 			ft_putstr("Error!\n");

@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:12:03 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/21 13:19:40 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/21 14:12:41 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	len = ac - 1;
 	if (ac < 2)
 	{
-		ft_putstr("Error!\n");
+		ft_putstr("\n");
 		return (0);
 	}
 	pile_a = create_pile(len, av + 1);

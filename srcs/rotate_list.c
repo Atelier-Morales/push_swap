@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:12:58 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/21 11:13:01 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/21 14:36:29 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	rotate(t_list *list)
 {
-	append_to_list(list, list->first->nb);
+	add_node(list, list->first->nb);
 	list_del(list, list->first);
 }
 
