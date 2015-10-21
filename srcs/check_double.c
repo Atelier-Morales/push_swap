@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:08:54 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/21 11:08:57 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/21 11:42:35 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	check_list(int *table, int check, int pos, int len)
 		return (1);
 	while (i < len)
 	{
-		if (table[i] == check) 
+		if (table[i] == check)
 			return (0);
 		++i;
 	}

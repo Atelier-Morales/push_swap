@@ -6,7 +6,7 @@
 #    By: fmorales <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/21 11:06:58 by fmorales          #+#    #+#              #
-#    Updated: 2015/10/21 11:07:03 by fmorales         ###   ########.fr        #
+#    Updated: 2015/10/21 13:38:24 by fmorales         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC = 	main.c 				\
 		push_swap.c 		\
 		check_sorted_list.c \
 		rotate_list.c    	\
+		push_list.c			\
 		delete_node.c 		\
 		swap_list.c
 DIR = srcs/
