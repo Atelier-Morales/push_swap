@@ -6,12 +6,11 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:11:52 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/21 11:11:54 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/26 10:41:31 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static int	test_sign(const char *str, int i)
 {

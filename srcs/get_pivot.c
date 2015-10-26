@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_list.c                                       :+:      :+:    :+:   */
+/*   get_pivot.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/21 11:12:20 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/26 10:57:11 by fmorales         ###   ########.fr       */
+/*   Created: 2015/10/26 12:34:58 by fmorales          #+#    #+#             */
+/*   Updated: 2015/10/26 13:41:06 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "push_swap.h"
 
-void		print_list(t_list *list)
+int	get_pivot(t_list *list)
 {
-	t_pile	*test;
+	t_pile	*buf;
+	int 	pivot;
 
-	test = list->first;
-	if (list != NULL)
+	buf = list->first;
+	while (buf->next)
+		buf = buf->next;
+	pivot = buf->nb;
+	return (pivot);
+}
+
+int	get_len(t_list *list)
+{
+	t_pile	*node;
+	int		len;
+
+	len = 0;
+	node = list->first;
+	while (node)
 	{
-		while (test)
-		{
-			ft_putnbr(test->nb);
-			if (test->next != NULL)
-				ft_putstr(" -> ");
-			test = test->next;
-		}
+		len++;
+		node = node->next;
 	}
-	ft_putstr("\n");
+	return (len);
 }

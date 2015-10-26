@@ -6,7 +6,7 @@
 #    By: fmorales <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/21 11:06:58 by fmorales          #+#    #+#              #
-#    Updated: 2015/10/21 13:38:24 by fmorales         ###   ########.fr        #
+#    Updated: 2015/10/26 12:40:11 by fmorales         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,10 @@ SRC = 	main.c 				\
 		rotate_list.c    	\
 		push_list.c			\
 		delete_node.c 		\
-		swap_list.c
+		check_flags.c		\
+		swap_list.c			\
+		treat_case.c		\
+		get_pivot.c
 DIR = srcs/
 LIB = libft/
 HEADER = includes/

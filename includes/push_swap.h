@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 13:13:52 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/21 14:35:51 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/26 13:41:20 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,14 @@ typedef struct		s_list
 {
 	int				len;
 	t_pile			*first;
-	t_pile			*last;
+	t_pile			*last;	
 }					t_list;
+
+typedef struct		s_flags
+{
+	int				print;
+	int				options;
+}					t_flags;
 
 void				print_list(t_list *list);
 t_list				*create_pile(int len, char **av);
@@ -44,8 +50,12 @@ t_list				*list_del(t_list *list, t_pile *node);
 t_list				*list_prepend(t_list *list, int value);
 void				rotate(t_list *list);
 void				sa(t_list *list);
-void				p(t_list *l_a, t_list *l_b);
+void				p(t_list *dest, t_list *src);
 void				pa(t_list *l_a, t_list *l_b);
 void				pb(t_list *l_a, t_list *l_b);
+t_flags				*check_flags(char **str);
+int					treat_case(t_list *list);
+int					get_pivot(t_list *list);
+int					get_len(t_list *list);
 
 #endif

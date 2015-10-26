@@ -6,14 +6,15 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:12:33 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/21 14:08:53 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/26 13:46:24 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "push_swap.h"
 
-t_list	*list_prepend(t_list *list, int value)
+t_list		*list_prepend(t_list *list, int value)
 {
 	t_pile	*node;
 
@@ -47,10 +48,14 @@ void		push_swap(t_list *a, t_list *b)
 	t_pile	*test;
 
 	test = a->first;
-	if (check_sorted_list(a, test) == 1)
+	if (check_sorted_list(a, test) == 1 || treat_case(a) == 1)
 		return ;
 	while (a->first)
 	{
+		test = a->first;
+		a->len = get_len(a);
+		if ((a->len == 3 && treat_case(a) == 1 ) || check_sorted_list(a, test) == 1)
+			break ;
 		rotate_list(a);
 		pb(a, b);
 		ft_putchar(' ');
