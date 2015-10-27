@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:12:33 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/26 13:46:24 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/27 12:48:59 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,7 @@ void		push_swap(t_list *a, t_list *b)
 	while (b->first)
 	{
 		if (b->first->next == NULL)
-		{
 			pa(a, b);
-			ft_putchar('\n');
-		}
 		else
 		{
 			pa(a, b);

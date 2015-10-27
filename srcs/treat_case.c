@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/26 10:59:25 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/26 13:47:52 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/27 12:51:33 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,15 @@ int			treat_case(t_list *list)
 		rotate(list);
 		ft_putstr("ra ");
 		sa(list);
-		if (list->first->next == NULL)
-			ft_putstr("\n");
-		else
+		if (list->first->next != NULL)
 			ft_putstr(" ");
 		return (1);
 	}
 	else if (case_2(list) == 1)
 	{
 		sa(list);
-		ft_putstr("\n");
+		if (list->first->next != NULL)
+			ft_putstr(" ");
 		return (1);
 	}
 	return (0);
