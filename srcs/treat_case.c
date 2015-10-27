@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/26 10:59:25 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/27 12:51:33 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/27 12:59:35 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ static int	case_2(t_list *list)
 
 int			treat_case(t_list *list)
 {
-	/* case 1 = 3 dans l'ordre inverse -> ra sa
-	 * case 2 = 2 premiers elements inverse -> sa
-	 * case 3 = 2 derniers element inverse -> rra, rra, sa, ra, ra */
+	/* case 1 = 3 dans l'ordre inverse -> ra sa || case 2 = 2 premiers elements inverse -> sa || case 3 = 2 derniers element inverse -> rra, rra, sa, ra, ra */
 
 	if (case_1(list) == 1)
 	{
