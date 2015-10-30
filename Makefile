@@ -6,7 +6,7 @@
 #    By: fmorales <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/21 11:06:58 by fmorales          #+#    #+#              #
-#    Updated: 2015/10/26 12:40:11 by fmorales         ###   ########.fr        #
+#    Updated: 2015/10/30 16:20:45 by fmorales         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC = 	main.c 				\
 		check_flags.c		\
 		swap_list.c			\
 		treat_case.c		\
+		reverse_rotate.c	\
 		get_pivot.c
 DIR = srcs/
 LIB = libft/

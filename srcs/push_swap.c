@@ -6,13 +6,22 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:12:33 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/27 12:48:59 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/30 15:57:52 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include "push_swap.h"
+
+static int	cases(t_list *list, t_pile *test)
+{
+	if (list->len == 3 && treat_case(list) == 1)
+		return (1);
+	else if (check_sorted_list(list, test) == 1)
+		return (1);
+	return (0);
+}
 
 t_list		*list_prepend(t_list *list, int value)
 {
@@ -54,7 +63,7 @@ void		push_swap(t_list *a, t_list *b)
 	{
 		test = a->first;
 		a->len = get_len(a);
-		if ((a->len == 3 && treat_case(a) == 1 ) || check_sorted_list(a, test) == 1)
+		if (cases(a, test) == 1)
 			break ;
 		rotate_list(a);
 		pb(a, b);

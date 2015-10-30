@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:11:07 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/21 14:34:27 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/30 15:02:02 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ t_list	*create_pile(int len, char **av)
 			buf = add_node(buf, ft_atoi(av[i]));
 		else
 		{
-			ft_putstr("Error!\n");
+			ft_putstr("Error\n");
 			return (NULL);
 		}
 		++i;
 	}
 	if (check_double(buf->first, len) == 0)
 	{
-		ft_putstr("Error!\n");
+		ft_putstr("Error\n");
 		return (NULL);
 	}
 	return (buf);

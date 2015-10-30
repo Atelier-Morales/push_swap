@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_pivot.c                                        :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/26 12:34:58 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/30 15:12:26 by fmorales         ###   ########.fr       */
+/*   Created: 2015/10/30 16:04:14 by fmorales          #+#    #+#             */
+/*   Updated: 2015/10/30 16:22:37 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-int	get_pivot(t_list *list)
+void	reverse_rotate(t_list *list)
 {
 	t_pile	*buf;
-	int		pivot;
+	int		tmp;
 
+	tmp = 0;
 	buf = list->first;
-	while (buf->next)
-		buf = buf->next;
-	pivot = buf->nb;
-	return (pivot);
-}
-
-int	get_len(t_list *list)
-{
-	t_pile	*node;
-	int		len;
-
-	len = 0;
-	node = list->first;
-	while (node)
+	while (buf)
 	{
-		len++;
-		node = node->next;
+		if (buf->next == NULL)
+		{
+			tmp = buf->nb;
+			break;
+		}
+		buf = buf->next;
 	}
-	return (len);
+	list_prepend(list, tmp);
+	list_del(list, list->last);
 }

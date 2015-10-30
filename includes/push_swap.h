@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 13:13:52 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/26 13:41:20 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/10/30 16:34:24 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_list				*add_node(t_list *l, int nb);
 t_list				*list_del(t_list *list, t_pile *node);
 t_list				*list_prepend(t_list *list, int value);
 void				rotate(t_list *list);
+void				reverse_rotate(t_list *list);
 void				sa(t_list *list);
 void				p(t_list *dest, t_list *src);
 void				pa(t_list *l_a, t_list *l_b);
