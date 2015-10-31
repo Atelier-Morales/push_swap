@@ -86,6 +86,7 @@ int			treat_case(t_list *list)
 		reverse_rotate(list);
 		ft_putstr("rra rra ");
 		sa(list);
+		ft_putstr(" ");
 		rotate(list);
 		rotate(list);
 		ft_putstr("ra ra ");

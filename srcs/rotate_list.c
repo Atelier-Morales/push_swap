@@ -12,7 +12,16 @@
 
 #include <stdlib.h>
 #include "push_swap.h"
+#include <stdio.h>
+/*
+int     check_last(t_list *list)
+{
+     t_pile   *node;
 
+     node = list->first;
+     
+}
+*/
 void	rotate(t_list *list)
 {
 	add_node(list, list->first->nb);
@@ -34,6 +43,12 @@ void	rotate_list(t_list *list)
 	}
 	while (list->first->nb != tmp)
 	{
+	     if (list->last->nb == tmp)
+	     {
+		  reverse_rotate(list);
+		  ft_putstr("rra ");
+		  break ;
+	     }
 		rotate(list);
 		ft_putstr("ra ");
 	}
