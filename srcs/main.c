@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:12:03 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/27 12:51:49 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/11/01 19:36:04 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(int ac, char **av)
 	initialize_list(&pile_b);
 	if (pile_a)
 	{
+		pile_a->flags = flags;
 		push_swap(pile_a, pile_b);
 		ft_putstr("\n");
 		if (flags->print == 1)

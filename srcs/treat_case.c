@@ -6,11 +6,10 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/26 10:59:25 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/30 16:34:27 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/11/01 20:10:45 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
@@ -38,8 +37,7 @@ static int	case_2(t_list *list)
 	nb = buf->nb;
 	check = nb > buf->next->nb ? 1 : 0;
 	buf = buf->next;
-	buf = buf->next;
-	if (check_sorted_list(list, buf) != 1)
+	if (nb > buf->next->nb)
 		return (0);
 	return (check);
 }
@@ -51,7 +49,8 @@ static int	case_3(t_list *list)
 	buf = list->first;
 	while (buf->next)
 	{
-		if (buf->next->next == NULL && buf->nb > buf->next->nb && buf->prev->nb < buf->next->nb) 
+		if (buf->next->next == NULL && buf->nb > buf->next->nb &&\
+				buf->prev->nb < buf->next->nb)
 			return (1);
 		else if (buf->nb > buf->next->nb)
 			return (0);
@@ -60,36 +59,44 @@ static int	case_3(t_list *list)
 	return (0);
 }
 
-/* case 3 = 2 derniers elements inverse -> rra, rra, sa, ra, ra */
+void		treat_case_3(t_list *list, t_list *list_b)
+{
+	reverse_rotate(list);
+	print_action("rra ", list, list_b);
+	reverse_rotate(list);
+	print_action("rra ", list, list_b);
+	sa(list, list_b);
+	rotate(list);
+	print_action("ra ", list, list_b);
+	rotate(list);
+	if (list_b->first == NULL)
+	{
+		if (list->flags->last == 1)
+			print_action("\x1b[32mra\x1b[0m", list, list_b);
+		else
+			print_action("ra", list, list_b);
+	}
+	else
+		print_action("ra ", list, list_b);
+}
 
-int			treat_case(t_list *list)
+int			treat_case(t_list *list, t_list *list_b)
 {
 	if (case_1(list) == 1)
 	{
 		rotate(list);
-		ft_putstr("ra ");
-		sa(list);
-		if (list->first->next != NULL)
-			ft_putstr(" ");
+		print_action("ra ", list, list_b);
+		sa(list, list_b);
 		return (1);
 	}
 	else if (case_2(list) == 1)
 	{
-		sa(list);
-		if (list->first->next != NULL)
-			ft_putstr(" ");
+		sa(list, list_b);
 		return (1);
 	}
 	else if (case_3(list) == 1)
 	{
-		reverse_rotate(list);
-		reverse_rotate(list);
-		ft_putstr("rra rra ");
-		sa(list);
-		ft_putstr(" ");
-		rotate(list);
-		rotate(list);
-		ft_putstr("ra ra ");
+		treat_case_3(list, list_b);
 		return (1);
 	}
 	return (0);

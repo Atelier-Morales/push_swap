@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:12:33 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/30 15:57:52 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/11/01 20:13:01 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <stdio.h>
 #include "push_swap.h"
 
-static int	cases(t_list *list, t_pile *test)
+static int	cases(t_list *list, t_list *list_b, t_pile *test)
 {
-	if (list->len == 3 && treat_case(list) == 1)
+	if (list->len == 3 && treat_case(list, list_b) == 1)
 		return (1);
 	else if (check_sorted_list(list, test) == 1)
 		return (1);
@@ -57,26 +57,20 @@ void		push_swap(t_list *a, t_list *b)
 	t_pile	*test;
 
 	test = a->first;
-	if (check_sorted_list(a, test) == 1 || treat_case(a) == 1)
+	if (check_sorted_list(a, test) == 1 || treat_case(a, b) == 1)
 		return ;
 	while (a->first)
 	{
 		test = a->first;
 		a->len = get_len(a);
-		if (cases(a, test) == 1)
+		if (cases(a, b, test) == 1)
 			break ;
-		rotate_list(a);
+		rotate_list(a, b);
+		if (cases(a, b, test) == 1)
+			break ;
 		pb(a, b);
-		ft_putchar(' ');
+		print_action("pb ", a, b);
 	}
 	while (b->first)
-	{
-		if (b->first->next == NULL)
-			pa(a, b);
-		else
-		{
-			pa(a, b);
-			ft_putchar(' ');
-		}
-	}
+		pa(a, b);
 }

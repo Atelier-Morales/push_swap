@@ -6,29 +6,20 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:12:58 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/26 13:18:51 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/11/01 19:00:31 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
-#include <stdio.h>
-/*
-int     check_last(t_list *list)
-{
-     t_pile   *node;
 
-     node = list->first;
-     
-}
-*/
 void	rotate(t_list *list)
 {
 	add_node(list, list->first->nb);
 	list_del(list, list->first);
 }
 
-void	rotate_list(t_list *list)
+void	rotate_list(t_list *list, t_list *list_b)
 {
 	t_pile	*node;
 	int		tmp;
@@ -43,13 +34,13 @@ void	rotate_list(t_list *list)
 	}
 	while (list->first->nb != tmp)
 	{
-	     if (list->last->nb == tmp)
-	     {
-		  reverse_rotate(list);
-		  ft_putstr("rra ");
-		  break ;
-	     }
+		if (list->last->nb == tmp)
+		{
+			reverse_rotate(list);
+			print_action("rra ", list, list_b);
+			break ;
+		}
 		rotate(list);
-		ft_putstr("ra ");
+		print_action("ra ", list, list_b);
 	}
 }

@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   print_action.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/30 16:04:14 by fmorales          #+#    #+#             */
-/*   Updated: 2015/11/01 18:22:40 by fmorales         ###   ########.fr       */
+/*   Created: 2015/11/01 18:32:44 by fmorales          #+#    #+#             */
+/*   Updated: 2015/11/01 19:03:30 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "push_swap.h"
+#include "../libft/libft.h"
 
-void	reverse_rotate(t_list *list)
+void	print_action(char *str, t_list *list_a, t_list *list_b)
 {
-	t_pile	*buf;
-	int		tmp;
-
-	tmp = 0;
-	buf = list->first;
-	while (buf)
+	ft_putstr(str);
+	if (list_a->flags->each == 1)
 	{
-		if (buf->next == NULL)
-		{
-			tmp = buf->nb;
-			break ;
-		}
-		buf = buf->next;
+		ft_putstr("\na: ");
+		print_list(list_a);
+		ft_putstr("b: ");
+		print_list(list_b);
+		ft_putstr("\n");
 	}
-	list_prepend(list, tmp);
-	list_del(list, list->last);
 }

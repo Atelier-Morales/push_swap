@@ -6,7 +6,7 @@
 /*   By: fmorales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/21 11:13:11 by fmorales          #+#    #+#             */
-/*   Updated: 2015/10/21 11:13:15 by fmorales         ###   ########.fr       */
+/*   Updated: 2015/11/01 19:32:42 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ static void		s(t_list *list)
 	node->next->prev = node;
 }
 
-void			sa(t_list *list)
+void			sa(t_list *list, t_list *list_b)
 {
 	if (verif(list))
-	{
 		s(list);
-		ft_putstr("sa");
-	}
+	if (list->first->next != NULL)
+		print_action("sa ", list, list_b);
+	else
+		print_action("sa", list, list_b);
 }
 
 void			sb(t_list *list)
