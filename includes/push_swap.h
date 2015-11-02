@@ -59,6 +59,7 @@ void				pa(t_list *l_a, t_list *l_b);
 void				pb(t_list *l_a, t_list *l_b);
 t_flags				*check_flags(char **str);
 int					treat_case(t_list *list, t_list *list_b);
+int					cases(t_list *list, t_list *list_b, t_pile *test);
 int					get_pivot(t_list *list);
 int					get_len(t_list *list);
 void				print_action(char *str, t_list *list_a, t_list *list_b);

@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include "push_swap.h"
 
-static int	cases(t_list *list, t_list *list_b, t_pile *test)
+int			cases(t_list *list, t_list *list_b, t_pile *test)
 {
 	if (list->len == 3 && treat_case(list, list_b) == 1)
 		return (1);
@@ -66,6 +66,7 @@ void		push_swap(t_list *a, t_list *b)
 		if (cases(a, b, test) == 1)
 			break ;
 		rotate_list(a, b);
+		test = a->first;
 		if (cases(a, b, test) == 1)
 			break ;
 		pb(a, b);

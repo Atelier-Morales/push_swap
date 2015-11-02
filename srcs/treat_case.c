@@ -10,13 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "../includes/push_swap.h"
 #include "../libft/libft.h"
 
 static int	case_1(t_list *list)
 {
 	t_pile	*buf;
+	int		len;
 
+	len = get_len(list);
+	if (len > 3)
+		return (0);
 	buf = list->first;
 	while (buf->next)
 	{
@@ -32,12 +37,23 @@ static int	case_2(t_list *list)
 	t_pile	*buf;
 	int		check;
 	int		nb;
+	int		len;
 
 	buf = list->first;
 	nb = buf->nb;
 	check = nb > buf->next->nb ? 1 : 0;
-	buf = buf->next;
-	if (nb > buf->next->nb)
+	len = get_len(list);
+	if (len == 3 && nb > buf->next->next->nb)
+		return (0);
+	buf = buf->next->next;
+	while (buf->next)
+	{
+		if (nb > buf->nb)
+			return (0);
+		buf = buf->next;
+	}
+	buf = list->first->next->next;
+	if (check_sorted_list(list, buf) != 1)
 		return (0);
 	return (check);
 }

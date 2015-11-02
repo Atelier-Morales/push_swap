@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "../libft/libft.h"
 
 int			check_sorted_list(t_list *list, t_pile *test)
 {
