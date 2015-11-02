@@ -1,0 +1,41 @@
+	if (list->first->nb == list->last->nb)
+		list->first = NULL;
+		list->last = NULL;
+		list->first = node->next;
+		list->first->prev = NULL;
+		list->last = node->prev;
+		list->last->next = NULL;
+	list->len--;
+	buf = list->first;
+	node = list->first;
+	test = list->first;
+	if (list == NULL || list->first == NULL)
+	if (list->len == 3 && treat_case(list, list_b) == 1)
+			if (list->first == NULL)
+				list->first = node;
+				list->last = node;
+				list->first->prev = node;
+				node->next = list->first;
+				list->first = node;
+			list->len++;
+	buf = list->first;
+	list_del(list, list->last);
+	add_node(list, list->first->nb);
+	list_del(list, list->first);
+	tmp = list->first->nb;
+	node = list->first;
+	while (list->first->nb != tmp)
+		if (list->last->nb == tmp)
+	if (list == NULL || list->first == NULL || list->first->next == NULL)
+	node = list->first;
+	list->first = node->next;
+	list->first->prev = NULL;
+	node->prev = list->first;
+	node->next = list->first->next;
+	list->first->next = node;
+	if (list->first->next != NULL)
+	buf = list->first;
+	buf = list->first;
+	buf = list->first->next->next;
+	buf = list->first;
+		if (list->flags->last == 1)

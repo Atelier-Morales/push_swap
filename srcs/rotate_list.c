@@ -12,14 +12,15 @@
 
 #include <stdlib.h>
 #include "push_swap.h"
+#include "../libft/libft.h"
 
-void	rotate(t_list *list)
+void		rotate(t_list *list)
 {
 	add_node(list, list->first->nb);
 	list_del(list, list->first);
 }
 
-void	rotate_list(t_list *list, t_list *list_b)
+void		rotate_list(t_list *list, t_list *list_b)
 {
 	t_pile	*node;
 	int		tmp;
@@ -37,10 +38,10 @@ void	rotate_list(t_list *list, t_list *list_b)
 		if (list->last->nb == tmp)
 		{
 			reverse_rotate(list);
-			print_action("rra ", list, list_b);
+			print_actions(list, list_b, "rra");
 			break ;
 		}
 		rotate(list);
-		print_action("ra ", list, list_b);
+		print_actions(list, list_b, "ra");
 	}
 }

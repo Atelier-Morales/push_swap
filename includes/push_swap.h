@@ -63,5 +63,6 @@ int					cases(t_list *list, t_list *list_b, t_pile *test);
 int					get_pivot(t_list *list);
 int					get_len(t_list *list);
 void				print_action(char *str, t_list *list_a, t_list *list_b);
+void				print_actions(t_list *list, t_list *list_b, char *str);
 
 #endif

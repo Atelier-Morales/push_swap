@@ -85,15 +85,7 @@ void		treat_case_3(t_list *list, t_list *list_b)
 	rotate(list);
 	print_action("ra ", list, list_b);
 	rotate(list);
-	if (list_b->first == NULL)
-	{
-		if (list->flags->last == 1)
-			print_action("\x1b[32mra\x1b[0m", list, list_b);
-		else
-			print_action("ra", list, list_b);
-	}
-	else
-		print_action("ra ", list, list_b);
+	print_actions(list, list_b, "rra");
 }
 
 int			treat_case(t_list *list, t_list *list_b)

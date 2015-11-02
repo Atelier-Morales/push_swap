@@ -25,3 +25,17 @@ void	print_action(char *str, t_list *list_a, t_list *list_b)
 		ft_putstr("\n");
 	}
 }
+
+void		print_actions(t_list *list, t_list *list_b, char *str)
+{
+	if (list_b->first == NULL && check_sorted_list(list, list->first) == 1)
+	{
+		if (list->flags->last == 1)
+			str = ft_strjoin(ft_strjoin("\x1b[32m", str), "\x1b[0m");
+		print_action(str, list, list_b);
+	}
+	else
+	{	
+		print_action(ft_strjoin(str, " "), list, list_b);
+	}
+}

@@ -37,10 +37,7 @@ void			sa(t_list *list, t_list *list_b)
 {
 	if (verif(list))
 		s(list);
-	if (list->first->next != NULL)
-		print_action("sa ", list, list_b);
-	else
-		print_action("sa", list, list_b);
+	print_actions(list, list_b, "sa");
 }
 
 void			sb(t_list *list)

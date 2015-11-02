@@ -16,7 +16,10 @@
 
 int			cases(t_list *list, t_list *list_b, t_pile *test)
 {
-	if (list->len == 3 && treat_case(list, list_b) == 1)
+	int	len;
+
+	len = get_len(list);
+	if (len == 3 && treat_case(list, list_b) == 1)
 		return (1);
 	else if (check_sorted_list(list, test) == 1)
 		return (1);

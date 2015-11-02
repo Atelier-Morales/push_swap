@@ -30,19 +30,8 @@ void		pa(t_list *l_a, t_list *l_b)
 {
 	if (verify_list(l_b))
 	{
-		if (l_b->first->next == NULL)
-		{
-			p(l_a, l_b);
-			if (l_a->flags->last == 1)
-				print_action("\x1b[32mpa\x1b[0m", l_a, l_b);
-			else
-				print_action("pa", l_a, l_b);
-		}
-		else
-		{
-			p(l_a, l_b);
-			print_action("pa ", l_a, l_b);
-		}
+		p(l_a, l_b);
+		print_actions(l_a, l_b, "pa");
 	}
 }
 
