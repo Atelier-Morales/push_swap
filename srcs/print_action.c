@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include "../libft/libft.h"
 
-void	print_action(char *str, t_list *list_a, t_list *list_b)
+void		print_action(char *str, t_list *list_a, t_list *list_b)
 {
 	ft_putstr(str);
 	if (list_a->flags->each == 1)
@@ -35,7 +35,7 @@ void		print_actions(t_list *list, t_list *list_b, char *str)
 		print_action(str, list, list_b);
 	}
 	else
-	{	
+	{
 		print_action(ft_strjoin(str, " "), list, list_b);
 	}
 }
